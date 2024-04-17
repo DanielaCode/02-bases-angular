@@ -5,6 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+//SECTION - este componente y la info que aca esta definida se puede usar solo en './app.component.html',
 export class AppComponent {
-  title = '02-bases-angular';
+  //SECTION - estas propiedades estan bindeadas a el html si cambian aca cambian alla
+
+  //NOTE - sintaxis corta de angular
+  title = '02-bases-angular my primer app de angular';
+
+  //NOTE - pero es lo mismo que
+  public someText:string="segundo texto de ejemplo"
+
 }
