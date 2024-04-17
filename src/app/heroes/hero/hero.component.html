@@ -15,10 +15,29 @@
   <dd>{{2+2}}</dd>
 </dl>
 
-<button class="btn btn-primary mx-2" (click)="changeName()">
+<!-- directivas : ngif se puede sacar con el shorcut a-ng -->
+<!-- Angular tiene un ciclo de deteccion de cambios que se encarga de agregar y eliminar
+este elemento del DOM dejando una referencia para luego seaber donde montarlo nuevamente -->
+
+<button
+  class="btn btn-primary mx-2"
+  (click)="changeName()"
+  *ngIf="name!=='spiderman'"
+  >
   Cambiar nombre
 </button>
 
-<button class="btn btn-primary" (click)="changeAge()">
+<button
+  class="btn btn-primary"
+  (click)="changeAge()"
+  *ngIf="age!==20"
+  >
   Cambiar edad
+</button>
+
+<button
+  class="btn btn-primary mx-2"
+  (click)="resetForm()"
+  >
+  Reset
 </button>
