@@ -1,11 +1,13 @@
 <h3>Listado de heroes!</h3>
 
+<!-- la cosa es que aca no es eficiente, porque esta evaluando 2 veces la misma
+condicion y ademas necesito un div adicional -->
+<h3 *ngIf="deletedHero; else nothingWasDeleted">Heroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
 
-<div *ngIf="deletedHero">
-  <h3>Heroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
-</div>
-
-<h3 *ngIf="!deletedHero">No ha borrado nada.</h3>
+<!-- ng-template es como un fragment en react -->
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
 
 <button
   class="btn btn-outline-danger"
