@@ -18,6 +18,14 @@ export class HeroComponent {
   gerHeroDescription():string{
     return `name: ${this.name} , age: ${this.age}`;
   }
+
+  changeName():void{
+    this.name="spiderman"
+  }
+
+  changeAge():void{
+    this.age=20;
+  }
 }
 //NOTE - en angular tiene two way data binding lo que quiere decir que lo que esta del lado
 //de la clase actualiza lo que esta en el html y lo que esta en el html puede actualizar lo que esta en la clase
