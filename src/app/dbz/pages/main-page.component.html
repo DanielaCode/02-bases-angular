@@ -4,7 +4,7 @@
   <!-- como vemos estos dos componentes personalizados se tienen que comunicar, pero son dos componentes aparte,
     nececito que cuando se haga sumbmit del formulario la info llegue a el characterList, como se hace?-->
   <div class="col">
-    <dbz-list [charactersList]="characters"></dbz-list>
+    <dbz-list [charactersList]="characters" (onCharacterDeleted)="onCharacterDeleted($event)"></dbz-list>
   </div>
   <div class="col">
     <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>

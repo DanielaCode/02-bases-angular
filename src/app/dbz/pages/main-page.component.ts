@@ -24,7 +24,10 @@ export class MainPageComponent {
 
   onNewCharacter(character:Character):void{
     //!SECTION el evento del padre que esta escuchando, se puede llamar como sea
-    console.log(character)
-    console.log( " desde el padre ")
+    this.characters.push(character)
+  }
+
+  onCharacterDeleted(name:string):void{
+    this.characters=this.characters.filter(e=>e.name!==name);
   }
 }

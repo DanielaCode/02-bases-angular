@@ -2,8 +2,15 @@
 <ul class="list-group" *ngFor="let item of charactersList;
            let isLast=last;
            let isFirst=first">
-  <li class="list-group-item" [ngClass]="{
+  <li class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{
       'list-group-item-dark':isLast,
       'list-group-item-primary':isFirst,
-    }">Name: {{item.name}} - Power: {{item.power}}</li>
+    }">
+    <div>
+      Name: {{item.name}} - Power: {{item.power}}
+    </div>
+    <button class="btn btn-danger"
+      (click)="deleteCharacter(item.name)"
+    >x</button>
+  </li>
 </ul>
