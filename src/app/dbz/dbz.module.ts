@@ -18,7 +18,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    //!SECTION para poder usar ngModule
     FormsModule
   ]
 })

@@ -1,21 +1,8 @@
 <h4>Agregar personaje</h4>
 <form action="" class="row">
-  <!-- como manejar formularios en angular, esto no es lo mejor pero sirve para explicar oneway data binding y two way db -->
-  <!-- cuando a un atributo le pongo [],  se asocia un atributo a una propiedad pero solo es one way es decir si ingreso un valoe en input no cambia la prop
-  solo si cambio la prop se actualiza en el input-->
-  <!-- cuando a un atributo le pongo (), eventos-->
-  <input type="text" [value]="character.name" class="form-control mb-2" placeholder="Nombre">
-
-  <!-- cuando pongo [(ngModel)] -> se le llama caja de bananos, estoy asociando un evento y un atributo al mismo tiempo, tiene que ser con ngmodel no sirve solo con value -->
-  <!-- tengo que importar FormsModule, todo lo que va con module se importa en el modulo, tambien tengo que agregar el atributo name -->
-  <input type="text" [(ngModel)]="character.name" class="form-control mb-2" placeholder="Nombre" name="nombre">
+ <input type="text" [(ngModel)]="character.name" class="form-control mb-2" placeholder="Nombre" name="nombre">
   <input type="number" [(ngModel)]="character.power" class="form-control mb-2" placeholder="Poder" name="poder">
   <button type="submit" class="btn btn-primary">
     Agregar
   </button>
 </form>
-<p>
-  <!-- pipe, para no ver [object object] si no el objeto representado en json -->
-  {{character|json}}
-</p>
-<!-- si testeo esto en el primer input cuando escribo en el input la propiedad no cambia pero si escribo en el 2do y tercero si-->
