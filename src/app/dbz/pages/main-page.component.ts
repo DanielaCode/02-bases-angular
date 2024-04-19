@@ -21,4 +21,10 @@ export class MainPageComponent {
       power:7000
     }
   ];
+
+  onNewCharacter(character:Character):void{
+    //!SECTION el evento del padre que esta escuchando, se puede llamar como sea
+    console.log(character)
+    console.log( " desde el padre ")
+  }
 }

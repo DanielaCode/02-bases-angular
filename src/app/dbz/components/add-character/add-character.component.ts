@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -8,9 +8,23 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
 
+  //!SECTION esto permite emitir un evento a el padre
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
   public character:Character={
     name: 'dani',
     power: 0
   }
 
+  emitCharacter():void{
+
+    //!SECTION cuando se hace submit se usa el emiter, para sacar el nuevo character ingresado en el formulario
+    this.onNewCharacter.emit(this.character);
+
+    //NOTE - si se hace submit se borra la info en el input y la propiedad es un reset
+    this.character.name="";
+    this.character.power=0;
+
+  }
 }
